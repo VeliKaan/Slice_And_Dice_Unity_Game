@@ -1,49 +1,52 @@
-# Slice_And_Dice_Unity_Game
-A simple target shooting game where players click on moving targets to earn points, while avoiding bad targets that reduce their lives. The game features an explosion effect when a target is destroyed.
+# 🔪 Slice_And_Dice
 
-## Features
+**Slice_And_Dice** is a fast‑paced, hyper‑casual slicing game inspired by “Fruit Ninja.” Swipe to pop objects before they fall—avoid misses and bombs!
 
-- **Game Difficulty**: Easy, Medium, Hard
-- **Score System**: Earn points by hitting targets.
-- **Lives**: Lose lives when a bad target is hit.
-- **Explosion Effect**: Particle effects when targets are destroyed.
-- **Pause/Restart**: Ability to pause and restart the game.
+---
 
-## GameManager
+## 🎯 Game Concept
 
-The `GameManager` class handles the game's logic, such as spawning targets, updating the score, managing lives, and controlling the overall game state (e.g., game over, pause).
+- Objects (fruits, shapes, etc.) spawn from top and fall downward.  
+- Swipe (touch/mouse) to slice and destroy them.  
+- If **3 objects** reach the bottom un‑sliced, the game ends.  
+- Beware of **bombs**—slicing a bomb deducts points!
 
-### Key Methods:
-- `StartGame(GameDifficulty difficulty)`: Starts the game based on the selected difficulty.
-- `UpdateScore(int scoreToAdd)`: Updates the player's score.
-- `UpdateLives(int livesToAdd)`: Updates the player's remaining lives.
-- `DecLives()`: Decreases the player's lives by 1.
-- `GameOver()`: Ends the game when the player runs out of lives.
-- `OnRestartButtonClick()`: Restarts the game when the restart button is clicked.
+---
 
-## Target
+## ⚙️ Gameplay Mechanics
 
-The `Target` class represents the targets the player must click to score points. Some targets are bad and cause the player to lose lives.
+| Element      | Effect                                                |
+|--------------|-------------------------------------------------------|
+| 🍎 Object    | +5 point when sliced                                  |
+| 💣 Bomb      | –X points when sliced (penalty)                       |
+| 🚫 Miss      | Falling 3 un‑sliced objects ends the game             |
+| ⏱️ Difficulty| 3 levels: Easy, Medium, Hard (spawn rate & speed)     |
 
-### Key Methods:
-- `DestroyTarget()`: Destroys the target, plays the explosion effect, and updates the score.
-- `RandomForce()`: Generates a random upward force for the target.
-- `RandomTorque()`: Generates random torque to make the target spin.
-- `RandomSpawnPos()`: Generates a random spawn position for the target.
+---
 
-### Components:
-- **TrailRenderer**: Adds a trail effect when targets are clicked.
-- **BoxCollider**: Detects collisions with other objects.
-- **ParticleSystem (Explosion)**: Plays an explosion effect when the target is destroyed.
+## 🎮 Controls
 
-## Game Flow
+- **Mobile:** Swipe with finger to slice.  
+- **PC:** Click & drag mouse to slice.
 
-1. **Start Menu**: Select the difficulty (Easy, Medium, or Hard).
-2. **Gameplay**: Targets appear at random positions and move upwards. Click on targets to destroy them and earn points.
-3. **Game Over**: The game ends when the player runs out of lives. The player can restart the game.
+---
 
-## Controls
+## 🚀 Features
 
-- **Mouse Click**: Click on the targets to destroy them.
-- **P Key**: Pause the game and toggle the pause menu.
-- **Restart Button**: Restart the game after game over.
+- Three difficulty modes:  
+  - **Easy:** Slow spawn, fewer simultaneous objects  
+  - **Medium:** Moderate speed & spawn rate  
+  - **Hard:** Fast, many objects—only for pros!  
+- Combo multiplier for slicing multiple objects in one swipe  
+- High-score tracking & local leaderboards  
+- Simple, colorful hyper-casual art style  
+
+---
+
+## 📸 Screenshots
+![vlcsnap-2025-05-07-10h41m09s584](https://github.com/user-attachments/assets/d99e3ec6-1b92-4e78-a10b-cb4392a5460d)
+![vlcsnap-2025-05-07-10h41m00s785](https://github.com/user-attachments/assets/33e11640-24de-4179-84f4-8d1fd26cb6bc)
+
+## 🎥 Gameplay Demo
+https://github.com/user-attachments/assets/1a32a2ff-f9cc-4328-ad5c-c580079f949a
+
